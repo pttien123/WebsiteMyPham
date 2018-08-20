@@ -2,7 +2,7 @@
 sẽ có những phần sẽ được load lại nhiều lần, không that đổi. Để không phải viết
 lại nhiều lần và tiện lợi hơn, nên để vào một file riêng
 Các nội dung của từng thẻ <div> sẽ có một file tương ứng.
-Nên để code vào file đó để nhìn gọn gàng hơn, dễ sửa hơn. 
+Nên để code vào file đó để nhìn gọn gàng hơn, dễ sửa hơn.
 -->
 <html>
   <head>
@@ -10,28 +10,30 @@ Nên để code vào file đó để nhìn gọn gàng hơn, dễ sửa hơn.
   </head>
 
   <body>
-    <div id= "wrapper">
-        <div id ="header">
+    <a href="#" id="back_to_top" style="display: block;">
+		   <img src="<?php echo public_url() ?>site/images/top.png">
+	  </a>
+    <div class= "wrapper">
+        <div class ="header">
             <?php $this->load->view('site/header');?>
         </div>
-
-        <div id ="container">
-            <div id ="left">
+        <div class ="container">
+            <div class ="left">
                 <?php $this->load->view('site/left');?>
             </div>
 
-            <div id ="content">
+            <div class ="content">
                 <?php $this->load->view($temp); ?>
             </div>
-            <div id ="right ">
+            <div class ="right ">
                   <?php $this->load->view('site/right');?>
             </div>
-            <div id="clear">
+            <div class="clear">
 
             </div>
         </div>
 
-        <div id ="footer">
+        <div class ="footer">
             <?php $this->load->view('site/footer');?>
         </div>
     </div>
