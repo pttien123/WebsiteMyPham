@@ -1,8 +1,8 @@
 
 	           <!-- The box-header-->
 
-<link type="text/css" href="<?php echo public_url() ?>site/js/jquery/autocomplete/css/smoothness/jquery-ui-1.8.16.custom.css" rel="stylesheet">
-<script type="text/javascript" src="<?php echo public_url() ?>site/js/jquery/autocomplete/jquery-ui-1.8.16.custom.min.js"></script>
+<link type="text/css" href="<?php echo public_url() ?>js/jquery/autocomplete/css/smoothness/jquery-ui-1.8.16.custom.css" rel="stylesheet">
+<script type="text/javascript" src="<?php echo public_url() ?>js/jquery/autocomplete/jquery-ui-1.8.16.custom.min.js"></script>
 
 <script type="text/javascript">
 //autocomplete: hiển thị các sản phẩm theo từ khóa của khách hàng khi tim kiếm

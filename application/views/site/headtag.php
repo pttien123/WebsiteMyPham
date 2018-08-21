@@ -12,9 +12,9 @@
 
         <!-- the Javascript -->
 
-        <script type="text/javascript" src="<?php echo public_url() ?>site/js/jquery/jquery.min.js"></script>
-		<script type="text/javascript" src="<?php echo public_url() ?>site/js/jquery/jquery-ui.min.js"></script>
-		<link rel="stylesheet" href="<?php echo public_url() ?>site/js/jquery/jquery-ui/custom-theme/jquery-ui-1.8.21.custom.css" type="text/css">
+        <script type="text/javascript" src="<?php echo public_url() ?>js/jquery/jquery.min.js"></script>
+		<script type="text/javascript" src="<?php echo public_url() ?>js/jquery/jquery-ui.min.js"></script>
+		<link rel="stylesheet" href="<?php echo public_url() ?>js/jquery/jquery-ui/custom-theme/jquery-ui-1.8.21.custom.css" type="text/css">
 
         <script src="<?php echo public_url() ?>site/js/script.js"></script>
 

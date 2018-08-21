@@ -1,10 +1,11 @@
 <!-- The box-footer-->
 
      <div id="footer_text"> <!-- The footer_text -->
-	     <strong>Học lập trình website online miễn phí.</strong>
-		 <p>Hướng dẫn xây dựng website bán hàng và thanh toán trực tuyến. </p>
-		 <p>Video hướng dẫn: <a href="https://www.youtube.com/watch?list=PLml7xFCO5p8rlpbV-9bDdz74cCXQCmeDk&amp;v=YRyzBuA_O4A">Xem video</a></p>
-		 <p>Website: <a href="http://hocphp.info">hocphp.info</a></p>
+	     <strong>Shop mỹ phẩm ABC</strong>
+		 <p>Chuyên bán các loại mỹ phẩm có chiết xuất từ thiên nhiên </p>
+		 <p>Địa chỉ: 123 ABC Phường x Quận y</p>
+		 <p>Email: vidu@gmail.com</p>
+     <p>Điện thoại liên hệ: 0123456789</p>
 		 <p>Fanpage: <a href="https://www.facebook.com/nobitacnt/">https://www.facebook.com/nobitacnt/</a></p>
 
 	 </div><!-- End footer_text -->

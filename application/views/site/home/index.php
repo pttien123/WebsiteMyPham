@@ -16,7 +16,13 @@
              </div>
              <p class="price">  5,400,000 đ   </p>
              <center>
-                  <div class="raty" style="margin: 10px 0px; width: 100px;" id="9" data-score="4" title="good"><img src="raty/img/star-on.png" alt="1" title="good">&nbsp;<img src="raty/img/star-on.png" alt="2" title="good">&nbsp;<img src="raty/img/star-on.png" alt="3" title="good">&nbsp;<img src="raty/img/star-on.png" alt="4" title="good">&nbsp;<img src="raty/img/star-off.png" alt="5" title="good"><input type="hidden" name="score" value="4" readonly="readonly">
+                  <div class="raty" style="margin: 10px 0px; width: 100px;" id="9" data-score="4" title="good">
+                    <img src="<?php echo public_url() ?>site/raty/img/star-on.png" alt="1" title="good">&nbsp;
+                    <img src="<?php echo public_url() ?>site/raty/img/star-on.png" alt="2" title="good">&nbsp;
+                    <img src="<?php echo public_url() ?>site/raty/img/star-on.png" alt="3" title="good">&nbsp;
+                    <img src="<?php echo public_url() ?>site/raty/img/star-on.png" alt="4" title="good">&nbsp;
+                    <img src="<?php echo public_url() ?>site/raty/img/star-off.png" alt="5" title="good">
+                    <input type="hidden" name="score" value="4" readonly="readonly">
                   </div>
              </center>
              <div class="action">
@@ -37,7 +43,14 @@
                 <span class="price_old">10,000,000 đ</span>
 		          </p>
               <center>
-                  <div class="raty" style="margin: 10px 0px; width: 100px;" id="8" data-score="3.4" title="regular"><img src="raty/img/star-on.png" alt="1" title="regular">&nbsp;<img src="raty/img/star-on.png" alt="2" title="regular">&nbsp;<img src="raty/img/star-on.png" alt="3" title="regular">&nbsp;<img src="raty/img/star-half.png" alt="4" title="regular">&nbsp;<img src="raty/img/star-off.png" alt="5" title="regular"><input type="hidden" name="score" value="3.4" readonly="readonly"></div>
+                  <div class="raty" style="margin: 10px 0px; width: 100px;" id="8" data-score="3.4" title="regular">
+                    <img src="<?php echo public_url() ?>site/raty/img/star-on.png" alt="1" title="regular">&nbsp;
+                    <img src="<?php echo public_url() ?>site/raty/img/star-on.png" alt="2" title="regular">&nbsp;
+                    <img src="<?php echo public_url() ?>site/raty/img/star-on.png" alt="3" title="regular">&nbsp;
+                    <img src="<?php echo public_url() ?>site/raty/img/star-half.png" alt="4" title="regular">&nbsp;
+                    <img src="<?php echo public_url() ?>site/raty/img/star-off.png" alt="5" title="regular">
+                    <input type="hidden" name="score" value="3.4" readonly="readonly">
+                  </div>
               </center>
               <div class="action">
 
@@ -58,7 +71,14 @@
 				            <span class="price_old">6,200,000 đ</span>
               </p>
               <center>
-                  <div class="raty" style="margin: 10px 0px; width: 100px;" id="7" data-score="3.5" title="regular"><img src="raty/img/star-on.png" alt="1" title="regular">&nbsp;<img src="raty/img/star-on.png" alt="2" title="regular">&nbsp;<img src="raty/img/star-on.png" alt="3" title="regular">&nbsp;<img src="raty/img/star-half.png" alt="4" title="regular">&nbsp;<img src="raty/img/star-off.png" alt="5" title="regular"><input type="hidden" name="score" value="3.5" readonly="readonly"></div>
+                  <div class="raty" style="margin: 10px 0px; width: 100px;" id="7" data-score="3.5" title="regular">
+                    <img src="<?php echo public_url() ?>site/raty/img/star-on.png" alt="1" title="regular">&nbsp;
+                    <img src="<?php echo public_url() ?>site/raty/img/star-on.png" alt="2" title="regular">&nbsp;
+                    <img src="<?php echo public_url() ?>site/raty/img/star-on.png" alt="3" title="regular">&nbsp;
+                    <img src="<?php echo public_url() ?>site/raty/img/star-half.png" alt="4" title="regular">&nbsp;
+                    <img src="<?php echo public_url() ?>site/raty/img/star-off.png" alt="5" title="regular">
+                    <input type="hidden" name="score" value="3.5" readonly="readonly">
+                  </div>
               </center>
               <div class="action">
 
