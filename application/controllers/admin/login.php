@@ -4,6 +4,6 @@ class Login extends MY_Controller
 {
   function index()
   {
-    echo "Trang đăng nhập";
+    $this->load->view('admin/Login/index');
   }
 }
