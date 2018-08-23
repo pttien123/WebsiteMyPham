@@ -6,6 +6,8 @@
 //Tạo controller dùng chung kế thừa từ CI
 class MY_Controller extends CI_Controller
 {
+  //biến gửi dữ liệu cho bên view
+  public $data = array();
   function __construct()
   {
     //Hàm khởi tạo kế thừa CI controller
@@ -21,6 +23,7 @@ class MY_Controller extends CI_Controller
       case 'admin':
       {
         //Xử lý các dữ liệu cho trang admin
+        $this->load->helper('admin');
         $this->check_login();
       }
       default:
