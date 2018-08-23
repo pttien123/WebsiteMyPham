@@ -1,5 +1,6 @@
+<!--Tải slider chạy -->
 <?php $this->load->view('site/slide'); ?>
-
+<!--Tải sản phẩm -->
 <div class="box-center"><!-- The box-center product-->
     <div class="tittle-box-center">
 		   <h2>Sản phẩm mới</h2>
@@ -17,16 +18,11 @@
              <p class="price">  5,400,000 đ   </p>
              <center>
                   <div class="raty" style="margin: 10px 0px; width: 100px;" id="9" data-score="4" title="good">
-                    <img src="<?php echo public_url() ?>site/raty/img/star-on.png" alt="1" title="good">&nbsp;
-                    <img src="<?php echo public_url() ?>site/raty/img/star-on.png" alt="2" title="good">&nbsp;
-                    <img src="<?php echo public_url() ?>site/raty/img/star-on.png" alt="3" title="good">&nbsp;
-                    <img src="<?php echo public_url() ?>site/raty/img/star-on.png" alt="4" title="good">&nbsp;
-                    <img src="<?php echo public_url() ?>site/raty/img/star-off.png" alt="5" title="good">
-                    <input type="hidden" name="score" value="4" readonly="readonly">
+                  <input type="hidden" name="score" value="4" readonly="readonly">
                   </div>
              </center>
              <div class="action">
-	               <a class="button" href="them-vao-gio-9.html" title="Mua ngay" style="margin-right:50px;">Mua ngay</a>
+	               <a class="button" href="them-vao-gio-9.html" title="Mua ngay" >Mua ngay</a>
 	           <div class="clear"></div>
              </div>
          </div>
@@ -44,17 +40,13 @@
 		          </p>
               <center>
                   <div class="raty" style="margin: 10px 0px; width: 100px;" id="8" data-score="3.4" title="regular">
-                    <img src="<?php echo public_url() ?>site/raty/img/star-on.png" alt="1" title="regular">&nbsp;
-                    <img src="<?php echo public_url() ?>site/raty/img/star-on.png" alt="2" title="regular">&nbsp;
-                    <img src="<?php echo public_url() ?>site/raty/img/star-on.png" alt="3" title="regular">&nbsp;
-                    <img src="<?php echo public_url() ?>site/raty/img/star-half.png" alt="4" title="regular">&nbsp;
-                    <img src="<?php echo public_url() ?>site/raty/img/star-off.png" alt="5" title="regular">
+
                     <input type="hidden" name="score" value="3.4" readonly="readonly">
                   </div>
               </center>
               <div class="action">
 
-	                <a class="button" href="them-vao-gio-8.html" title="Mua ngay" style="margin-right:50px;">Mua ngay</a>
+	                <a class="button" href="them-vao-gio-8.html" title="Mua ngay" >Mua ngay</a>
 	                <div class="clear"></div>
               </div>
           </div>
@@ -72,17 +64,12 @@
               </p>
               <center>
                   <div class="raty" style="margin: 10px 0px; width: 100px;" id="7" data-score="3.5" title="regular">
-                    <img src="<?php echo public_url() ?>site/raty/img/star-on.png" alt="1" title="regular">&nbsp;
-                    <img src="<?php echo public_url() ?>site/raty/img/star-on.png" alt="2" title="regular">&nbsp;
-                    <img src="<?php echo public_url() ?>site/raty/img/star-on.png" alt="3" title="regular">&nbsp;
-                    <img src="<?php echo public_url() ?>site/raty/img/star-half.png" alt="4" title="regular">&nbsp;
-                    <img src="<?php echo public_url() ?>site/raty/img/star-off.png" alt="5" title="regular">
                     <input type="hidden" name="score" value="3.5" readonly="readonly">
                   </div>
               </center>
               <div class="action">
 
-	                <a class="button" href="them-vao-gio-7.html" title="Mua ngay" style="margin-right:50px;">Mua ngay</a>
+	                <a class="button" href="them-vao-gio-7.html" title="Mua ngay" >Mua ngay</a>
 	                <div class="clear"></div>
               </div>
             </div>
