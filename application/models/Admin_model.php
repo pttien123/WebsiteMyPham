@@ -2,7 +2,8 @@
 class Admin_model extends MY_Model
 {
   //ghi đè các biến
-    var $table = 'QUANTRIVIEN';
+    var $table = 'admin';
+    var $key   ='Username';
 }
 
 
