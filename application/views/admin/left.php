@@ -73,13 +73,10 @@
 
 					<ul class="sub">
 									<li >
-					<a href="admin/admin.html">
+					<a href="<?php echo admin_url('admin/') ?>">
 						Ban quản trị							</a>
 				</li>
-									<li >
-					<a href="admin/admin_group.html">
-						Nhóm quản trị							</a>
-				</li>
+
 									<li >
 					<a href="admin/user.html">
 						Thành viên							</a>

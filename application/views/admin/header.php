@@ -7,7 +7,7 @@
 
 		<div class="userNav">
 			<ul>
-				<li><a href="" target="_blank">
+				<li><a href="<?php echo admin_url() ?>" >
 					<img style="margin-top:7px;" src="<?php echo public_url('admin') ?>/images/icons/light/home.png">
 					<span>Trang chủ</span>
 				</a></li>
