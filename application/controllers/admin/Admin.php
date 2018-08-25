@@ -56,7 +56,7 @@ class Admin extends MY_Controller
         //Khi nhấn nút submit -> kiểm tra dữ liệu nhập
         if($this->input->post())
         {
-            //giatri1: tên của input cần kiểm tra; giatri2: Nội dung xuất; giatri3: điều kiện kiểm tra
+            //giatri1: tên ; giatri2: Nội dung xuất; giatri3: điều kiện kiểm tra
             $this->form_validation->set_rules('username','Username','required|min_length[6]|callback_check_username');
             $this->form_validation->set_rules('ho','Họ và tên lót','required|max_length[50]');
             $this->form_validation->set_rules('ten','Tên','required|max_length[20]');
@@ -221,6 +221,19 @@ class Admin extends MY_Controller
        $this->session->set_flashdata('message','Đã xóa thành công');
        redirect(admin_url('admin'));
      }
+
+     /*
+      * Đăng xuất khỏi trang
+      */
+      function logout()
+      {
+        //Nếu đang ở trạng thái đăng nhập thì xóa trạng thái đó đi
+          if($this->session->userdata('login'))
+          {
+              $this->session->unset_userdata('login');
+          }
+          redirect(admin_url('login'));
+      }
 
 
 }

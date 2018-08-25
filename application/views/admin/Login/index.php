@@ -27,6 +27,9 @@
                         </div>
 
                         <div class="loginControl">
+                            <div style="color=Red;text-align:center;">
+                                <?php echo form_error('login'); ?>
+                            </div>
                             <input type='hidden' name="submit" value='1'/>
                             <input type="submit"  value="Đăng nhập" class="dredB logMeIn" />
                             <div class="clear"></div>
