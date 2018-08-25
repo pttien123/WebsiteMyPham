@@ -84,7 +84,7 @@ class Admin extends MY_Controller
                     'Ten' => $ten,
                     'Email' => $email,
                     'Phone' => $phone,
-                    'Password' => $password,
+                    'Password' => md5($password),
                     'NgayTao' => $today,
                     'NgayCapNhat' => $today
                 );
