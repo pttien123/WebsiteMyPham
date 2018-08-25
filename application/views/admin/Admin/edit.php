@@ -5,7 +5,7 @@
 <div class="wrapper">
   	<div class="widget">
       		<div class="title">
-        			<h6>Thêm mới Quản Trị Viên</h6>
+        			<h6>Chỉnh sửa Quản Trị Viên</h6>
       		</div>
           <form class="form" id="form" action="" method="post" enctype="multipart/form-data">
 			         <fieldset>
@@ -16,7 +16,7 @@
                               </label>
                               <div class="formRight">
                                   <span class="oneTwo">
-                                      <input name="username" id="param_username" _autocheck="true" type="text" value="<?php echo set_value('username') ?>"/>
+                                      <input name="username" id="param_username" _autocheck="true" type="text" value="<?php echo $info->Username ?>"/>
                                   </span>
                                   <span name="name_autocheck" class="autocheck"></span>
                                   <div name="name_error" class="clear error"><?php echo form_error('username'); ?></div>
@@ -30,7 +30,7 @@
                             </label>
                            	<div class="formRight">
                              		<span class="oneTwo">
-                                    <input name="ho" id="param_ho" _autocheck="true" type="text" value="<?php echo set_value('ho') ?>"/>
+                                    <input name="ho" id="param_ho" _autocheck="true" type="text" value="<?php echo $info->Ho ?>"/>
                                 </span>
                              		<span name="name_autocheck" class="autocheck"></span>
                              		<div name="name_error" class="clear error"><?php echo form_error('ho'); ?></div>
@@ -44,7 +44,7 @@
                            </label>
                            <div class="formRight">
                                <span class="oneTwo">
-                                   <input name="ten" id="param_ten" _autocheck="true" type="text" value="<?php echo set_value('ten') ?>" />
+                                   <input name="ten" id="param_ten" _autocheck="true" type="text" value="<?php echo $info->Ten ?>" />
                                </span>
                                <span name="name_autocheck" class="autocheck"></span>
                                <div name="name_error" class="clear error"><?php echo form_error('ten'); ?></div>
@@ -59,7 +59,7 @@
                          </label>
                          <div class="formRight">
                              <span class="oneTwo">
-                                 <input name="email" id="param_email" _autocheck="true" type="text" value="<?php echo set_value('email') ?>"/>
+                                 <input name="email" id="param_email" _autocheck="true" type="text" value="<?php echo $info->Email?>"/>
                              </span>
                              <span name="name_autocheck" class="autocheck"></span>
                              <div name="name_error" class="clear error"><?php echo form_error('email'); ?></div>
@@ -73,7 +73,7 @@
                         </label>
                         <div class="formRight">
                             <span class="oneTwo">
-                                <input name="phone" id="param_phone" _autocheck="true" type="text" value="<?php echo set_value('phone') ?>"/>
+                                <input name="phone" id="param_phone" _autocheck="true" type="text" value="<?php echo $info->Phone ?>"/>
                             </span>
                             <span name="name_autocheck" class="autocheck"></span>
                             <div name="name_error" class="clear error"><?php echo form_error('phone'); ?></div>
@@ -88,6 +88,7 @@
                        <div class="formRight">
                            <span class="oneTwo">
                                <input name="password" id="param_password" _autocheck="true" type="password" />
+                               <p>Chú ý: Nếu thay đổi mật khẩu thì mới nhập dữ liệu</p>
                            </span>
                            <span name="name_autocheck" class="autocheck"></span>
                            <div name="name_error" class="clear error"><?php echo form_error('password'); ?></div>
@@ -110,7 +111,7 @@
                     </div>
                     <!--Hàng nút submit thêm QTV-->
                     <div class="formSubmit">
-                   <input type="submit" value="Thêm mới" class="redB">
+                   <input type="submit" value="Cập nhật" class="redB">
                 </div>
 
                </fieldset>

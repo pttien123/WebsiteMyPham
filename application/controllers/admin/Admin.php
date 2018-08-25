@@ -5,6 +5,7 @@ class Admin extends MY_Controller
     {
         parent::__construct();
         $this->load->model('admin_model');
+        date_default_timezone_set("Asia/Bangkok");
     }
 
      /*
@@ -66,6 +67,7 @@ class Admin extends MY_Controller
 
             //có cái if này nó mới in mấy cái kiểm tra
             //bên add.php form_error, form_value,...(không cần nội dung bên trong)
+            //Chạy form_validation
             if($this->form_validation->run())
             {
                 //Thêm mới hàng trong bảng
@@ -110,15 +112,114 @@ class Admin extends MY_Controller
     /*
      * Chỉnh sửa dữ liệu một quản trị viên
      */
-     function update()
+     function edit()
      {
+       //Load thư viện form_validation của CI
+       $this->load->library('form_validation');
+       $this->load->helper('form');
+       //Lấy username của quản trị viên cần chỉnh sửa
+       $user = $this->uri->rsegment('3');
+       //Lấy thông tin của quản trị viên
+       $info = $this->admin_model->get_info($user);
+       if(!$info)
+       {
+         $this->session->set_flashdata('message','Quản trị viên không tồn tại');
+          redirect(admin_url('admin'));
+       }
+       if($this->input->post())
+       {
+           //giatri1: tên của input cần kiểm tra; giatri2: Nội dung xuất; giatri3: điều kiện kiểm tra
+           //Nếu nhập mới giá trị username
+           if($this->input->post('username') <> $info->Username)
+           {
+              $this->form_validation->set_rules('username','Username','required|min_length[6]|callback_check_username');
+           }
+           else {
+             $this->form_validation->set_rules('username','Username','required');
 
+           }
+
+           $this->form_validation->set_rules('ho','Họ và tên lót','required|max_length[50]');
+           $this->form_validation->set_rules('ten','Tên','required|max_length[20]');
+           $this->form_validation->set_rules('email','Email','required|valid_email');
+           $this->form_validation->set_rules('phone','Số điện thoại','required|max_length[15]');
+
+           //Nếu có thay đổi mật khẩu
+           $password = $this->input->post('password');
+           if($password)
+           {
+             $this->form_validation->set_rules('password','Mật khẩu','required|min_length[8]|max_length[32]');
+             $this->form_validation->set_rules('repassword','Nhập lại mật khẩu','required|matches[password]');
+           }
+           if($this->form_validation->run())
+           {
+             //Thêm mới hàng trong bảng
+             $username = $this->input->post('username');
+             $ho = $this->input->post('ho');
+             $ten = $this->input->post('ten');
+             $email = $this->input->post('email');
+             $phone = $this->input->post('phone');
+
+             $today = date("Y/m/d");
+             $data = array(
+                 'Ho' => $ho,
+                 'Ten' => $ten,
+                 'Email' => $email,
+                 'Phone' => $phone,
+                 'Password' => md5($password),
+                 'NgayCapNhat' => $today
+             );
+             //Nếu thay đổi password
+             if($password)
+             {
+               $data['Password'] = md5($password);
+             }
+             //Nếu thay đổi username
+             if($this->input->post('username') <> $info->Username)
+             {
+                $data['Username'] = $this->input->post('username');
+             }
+             if($this->admin_model->update($user,$data))
+             {
+                $this->session->set_flashdata('message','Chỉnh sửa thành công');
+             }
+             else
+             {
+                 $this->session->set_flashdata('message','Chỉnh sửa thất bại');
+             }
+             //Chuyển về trang danh sách
+             redirect(admin_url('admin'));
+           }
+
+        }
+
+
+       //Load view của trang
+       $this->data['info'] = $info;
+       $this->data['temp'] = 'admin/Admin/edit';
+       $this->load->view('admin/layoutmaster',$this->data);
 
      }
 
+     /*
+      * Xóa quản trị viên
+      */
      function delete()
      {
-       // code...
+       //Lấy username của quản trị viên cần chỉnh sửa
+       $user = $this->uri->rsegment('3');
+       //Lấy thông tin của quản trị viên
+       $info = $this->admin_model->get_info($user);
+       if(!$info)
+       {
+          $this->session->set_flashdata('message','Không tồn tại tài khoản này');
+          redirect(admin_url('admin'));
+       }
+       //Thực hiện xóa
+       $where = array('Username' => $user);
+       $this->admin_model->del_rule($where);
+       $this->session->set_flashdata('message','Đã xóa thành công');
+       redirect(admin_url('admin'));
      }
 
 
