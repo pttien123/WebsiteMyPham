@@ -121,6 +121,7 @@ class Admin extends MY_Controller
        $user = $this->uri->rsegment('3');
        //Lấy thông tin của quản trị viên
        $info = $this->admin_model->get_info($user);
+       //Nếu không có thông tin
        if(!$info)
        {
          $this->session->set_flashdata('message','Quản trị viên không tồn tại');
