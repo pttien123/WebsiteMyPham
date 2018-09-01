@@ -265,7 +265,8 @@ class MY_Model extends CI_Model {
 
 		if($query->num_rows() > 0){
 			return TRUE;
-		}else{
+		}
+		else{
 			return FALSE;
 		}
 	}

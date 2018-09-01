@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html >
   <head>
-    <?php $this->load->view('admin/headtag') ?>
+    <?php $this->load->view('admin/headtag');?>
   </head>
   <body class="nobg loginPage" style="min-height:100%;">
     <!-- Main content wrapper -->

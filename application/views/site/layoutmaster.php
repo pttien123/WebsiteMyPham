@@ -22,7 +22,7 @@ Nên để code vào file đó để nhìn gọn gàng hơn, dễ sửa hơn.
                 <?php $this->load->view('site/left');?>
             </div>
 
-            <div class ="content">
+            <div class ="content" style="align=center;">
                 <?php $this->load->view($temp); ?>
             </div>
             <div class ="right ">
