@@ -85,8 +85,7 @@ class Admin extends MY_Controller
                     'Email' => $email,
                     'Phone' => $phone,
                     'Password' => md5($password),
-                    'NgayTao' => $today,
-                    'NgayCapNhat' => $today
+                    'NgayTao' => $today                    
                 );
 
                 if($this->admin_model->insert($data))

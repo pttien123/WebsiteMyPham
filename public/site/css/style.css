@@ -48,7 +48,7 @@ div.footer
     padding-bottom: 30px;
     padding-top: 5px;
 	padding:10px 15px;
-	
+
 }
 
 div.footer #footer_text
@@ -212,9 +212,9 @@ div.top
 	top: 50%;
 	width: 150px !important;
 	z-index: 100001;
-	
+
 	opacity:0.8;
-	
+
 	-moz-border-radius: 12px;
 	-webkit-border-radius: 12px;
 	border-radius: 12px;
