@@ -33,6 +33,7 @@ class MY_Controller extends CI_Controller
       default:
       {
         //Xử lý các dữ liệu cho trang ngoài
+        $this->load->library('session');
       }
     }
   }

@@ -17,7 +17,7 @@
    imageScaleMode:"fill",
    arrowsNavAutoHide:false,
    autoScaleSlider:true,
-   autoScaleSliderWidth:580,//chiều rộng slide
+   autoScaleSliderWidth:650,//chiều rộng slide
    autoScaleSliderHeight:205,//chiều cao slide
    controlNavigation:"bullets",
    thumbsFitInViewport:false,

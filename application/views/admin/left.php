@@ -43,19 +43,20 @@
 </li>
 	<li class="product">
 
-	<a href="admin/product.html" class=" exp" >
+	<a href="admin/product.html" class=" exp inactive" >
 		<span>Sản phẩm</span>
 		<strong>3</strong>
 	</a>
-
-					<ul class="sub">
+					<ul style="display: none;" class="sub">
 									<li >
 					<a href="admin/product.html">
-						Sản phẩm							</a>
+						Sản phẩm
+					</a>
 				</li>
-									<li >
-					<a href="admin/cat.html">
-						Danh mục							</a>
+				<li>
+					<a href="<?php echo admin_url('catalog')?>">
+						Danh mục
+					</a>
 				</li>
 									<li >
 					<a href="admin/comment.html">
