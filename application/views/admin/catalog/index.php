@@ -13,7 +13,7 @@
                   <input type="checkbox" id="titleCheck" name="titleCheck">
               </span>
         			<h6>Danh Sách Danh Mục Sản Phẩm</h6>
-        		 	<div class="num f12"> Tổng số: <b><?php echo count($list)?></b></div>
+        		 	<div class="num f12"> Tổng số: <b><?php //echo count($list)?></b></div>
       		</div>
 
           <table cellpadding="0" cellspacing="0" width="100%" class="sTable mTable myTable withCheck" id="checkAll">
@@ -21,9 +21,10 @@
         				<tr>
         					<td style="width:10px;"><img src="<?php echo public_url('admin/images/')?>icons/tableArrows.png" /></td>
         					<td style="width:80px;">Mã_DM</td>
-                  <td style="width:80px;">Ví trí hiển thị</td>
                   <td>Tên danh mục</td>
+                  <td>Danh mục cha</td>
         					<td>Mô tả</td>
+                  <td>TT hiển thị</td>
                   <td>Ghi chú</td>
                   <td style="width:100px;">Hành động</td>
         				</tr>
@@ -31,7 +32,7 @@
 
          			<tfoot>
         				<tr>
-        					<td colspan="10">
+        					<td colspan="9">
         					     <div class="list_action itemActions">
         								<a href="#submit" id="submit" class="button blueB" url="user/del_all.html">
         									<span style='color:white;'>Xóa hết</span>
@@ -46,31 +47,48 @@
 
         			<tbody>
         				<!-- Filter -->
-                <?php foreach ($list as $row): ?>
-        					<tr>
-          						<td>
-                          <input type="checkbox" name="id[]" value="<?php echo $row->MaDM?>" /></td>
-          						<td class="textC"><?php echo $row->MaDM?></td>
-                      <td class="textC"><?php echo $row->ViTriHienThi?></td>
+                <?php //foreach ($list as $row): ?>
+                  <tr>
                       <td>
-                          <span title="<?php echo $row->TenLoai?>" class="tipS">
-            							           <?php echo $row->TenLoai?>
+                          <input type="checkbox" name="id[]" value="<?php //echo $row->MaDM ?>" />
+                      </td>
+
+                      <td class="textC"><?php //echo $row->MaDM ?></td>
+
+                      <td>
+                          <span title="" class="tipS">
+                                     <?php//echo $row->TenDM?>
                           </span>
                       </td>
-                      <td> 	<?php echo $row->MoTa?>	</td>
-                      <td> 	<?php echo $row->GhiChu?>	</td>
+                      <td>
+                          <span title="" class="tipS">
+                                     <?php //echo $row->DMCha?>
+                          </span>
+                      </td>
+
+                      <td>
+                          <span title="" class="tipS">
+                          <?php //echo $row->MoTa ?>
+                          </span>
+                      </td>
+
+                      <td> <?php //echo $row->TTHienThi ?>		</td>
+
+                      <td> 	<?php //echo $row->GhiChu ?>	</td>
+
+
 
           						<td class="option">
-              							<a href="<?php echo admin_url('catalog/edit/').$row->MaDM?>" title="Chỉnh sửa" class="tipS ">
+              							<a href="<?php //echo admin_url('catalog/edit/').$row->MaDM?>" title="Chỉnh sửa" class="tipS ">
               							     <img src="<?php echo public_url('admin/images/')?>icons/color/edit.png" />
               							</a>
 
-              							<a href="<?php echo admin_url('catalog/delete/').$row->MaDM?>" title="Xóa" class="tipS verify_action" >
+              							<a href="<?php //echo admin_url('catalog/delete/').$row->MaDM?>" title="Xóa" class="tipS verify_action" >
               							    <img src="<?php echo public_url('admin/images/')?>icons/color/delete.png" />
               							</a>
           						</td>
         					</tr>
-                <?php endforeach; ?>
+                <?php //endforeach; ?>
         			</tbody>
         </table>
   	</div>

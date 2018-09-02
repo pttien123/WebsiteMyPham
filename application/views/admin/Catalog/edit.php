@@ -5,7 +5,7 @@
 <div class="wrapper">
   	<div class="widget">
       		<div class="title">
-        			<h6>Thêm mới danh mục sản phẩm</h6>
+        			<h6>Chỉnh sửa danh mục sản phẩm</h6>
       		</div>
 
           <form class="form" id="form" method="post" enctype="multipart/form-data" action="">
@@ -91,7 +91,7 @@
 
                     <!--Hàng nút submit thêm QTV-->
                     <div class="formSubmit">
-                        <input type="submit" value="Thêm mới" class="redB">
+                        <input type="submit" value="Cập nhật" class="redB">
                 </div>
 
                </fieldset>

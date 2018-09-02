@@ -45,24 +45,40 @@
 
 	<a href="admin/product.html" class=" exp inactive" >
 		<span>Sản phẩm</span>
-		<strong>3</strong>
+		<strong>6</strong>
 	</a>
 					<ul style="display: none;" class="sub">
-									<li >
-					<a href="admin/product.html">
-						Sản phẩm
-					</a>
-				</li>
-				<li>
-					<a href="<?php echo admin_url('catalog')?>">
-						Danh mục
-					</a>
-				</li>
-									<li >
-					<a href="admin/comment.html">
-						Phản hồi							</a>
-				</li>
-							</ul>
+							<li >
+									<a href="admin/product.html">
+										Sản phẩm
+									</a>
+						  </li>
+						  <li>
+									<a href="<?php echo admin_url('catalog')?>">
+										Danh mục
+									</a>
+						  </li>
+							<li>
+									<a href="<?php echo admin_url('brand')?>">
+										Nhãn hiệu
+									</a>
+						  </li>
+							<li>
+									<a href="<?php echo admin_url('unit')?>">
+										Đơn vị khối lượng
+									</a>
+						  </li>
+							<li>
+									<a href="<?php echo admin_url('storage')?>">
+										Hàng tồn
+									</a>
+						  </li>
+							<li >
+									<a href="admin/comment.html">
+										Phản hồi
+									</a>
+						  </li>
+					</ul>
 
 </li>
 	<li class="account">
