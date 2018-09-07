@@ -1,6 +1,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-        <title>Trang Admin</title>
+        <title><?php echo $title ?></title>
 
         <meta name="robots" content="noindex, nofollow" />
 

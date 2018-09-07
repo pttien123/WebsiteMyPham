@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <?php $this->load->view('admin/headtag'); ?>
+      <?php $this->load->view('admin/headtag',$this->data); ?>
   </head>
   <body>
     <!-- Left side content -->

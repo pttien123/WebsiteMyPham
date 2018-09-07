@@ -14,16 +14,18 @@ class Admin extends MY_Controller
     function index()
     {
       //Tạo các biến giữ giá trị trong bảng
-      // $info = array();
-      // $list = $this->admin_model->get_list($info);
+
+      // $list = $this->admin_model->get_list();
       // //Biến cho biết tổng các hàng dữ liệu trong bảng
       // $total = $this->admin_model->get_total();
-      // //Lấy nội dung thông báo bên function add()
-      // $message = $this->session->flashdata('message');
-      // //Load dữ liệu view của trang
+      // //Lấy nội dung thông báo từ bên function add()
+      $message = $this->session->flashdata('message');
+
       // $this->data['list'] = $list;
       // $this->data['total'] = $total;
-      // $this->data['message'] = $message;
+      $this->data['message'] = $message;
+      //Load dữ liệu view của trang
+      $this->data['title'] = 'Trang Quản lý Quản Trị Viên';
       $this->data['temp'] = 'admin/Admin/index';
       $this->load->view('admin/layoutmaster',$this->data);
     }

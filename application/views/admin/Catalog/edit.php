@@ -17,10 +17,10 @@
                       </label>
                       <div class="formRight">
                           <span class="oneTwo">
-                              <input name="tenDM" id="param_tenDM" _autocheck="true" type="text" value="<?php //echo set_value('tenDM') ?>" />
+                              <input name="tenDM" id="param_tenDM" _autocheck="true" type="text" value="<?php echo $info->TenDM ?>" />
                           </span>
                           <span name="name_autocheck" class="autocheck"></span>
-                          <div name="name_error" class="clear error"><?php //echo form_error('tenDM'); ?></div>
+                          <div name="name_error" class="clear error"><?php echo form_error('tenDM'); ?></div>
                       </div>
                       <div class="clear"></div>
                  </div>
@@ -34,13 +34,13 @@
                           <span class="oneTwo">
                               <select name="dmcha" id="param_dmcha" _autocheck="true">
                                   <option value="0">Là danh mục cha</option>
-                                  <?php //foreach ($list as $row):?>
-                                  <option value="<?php //echo $row->MaDM ?>"><?php //echo row->TenDM ?></option>
-                                  <?php //endforeach ?>
+                                  <?php foreach ($list as $row):?>
+                                    <option value="<?php echo $row->MaDM ?>" <?php echo ($row->MaDM == $info->DMCha) ? 'selected' : '';?>> <?php echo $row->TenDM ?></option>
+                                  <?php endforeach ?>
                               </select>
                           </span>
                           <span name="name_autocheck" class="autocheck"></span>
-                          <div name="name_error" class="clear error"><?php //echo form_error('dmcha'); ?></div>
+                          <div name="name_error" class="clear error"></div>
                       </div>
                       <div class="clear"></div>
                  </div>
@@ -52,11 +52,11 @@
                       <div class="formRight">
                           <span class="oneTwo">
 
-                              <input name="tt_hienthi" id="param_tt_hienthi" _autocheck="true" type="text" value="<?php //echo set_value('tt_hienthi') ?>" />
+                              <input name="tt_hienthi" id="param_tt_hienthi" _autocheck="true" type="text" value="<?php echo $info->TTHienThi ?>" />
 
                           </span>
                           <span name="name_autocheck" class="autocheck"></span>
-                          <div name="name_error" class="clear error"><?php //echo form_error('tt_hienthi'); ?></div>
+                          <div name="name_error" class="clear error"><?php echo form_error('tt_hienthi'); ?></div>
                       </div>
                       <div class="clear"></div>
                  </div>
@@ -67,10 +67,10 @@
                       </label>
                       <div class="formRight">
                           <span class="oneTwo">
-                              <input name="mota" id="param_mota" _autocheck="true" type="text" value="<?php //echo set_value('mota') ?>" />
+                              <input name="mota" id="param_mota" _autocheck="true" type="text" value="<?php echo $info->MoTa ?>" />
                           </span>
                           <span name="name_autocheck" class="autocheck"></span>
-                          <div name="name_error" class="clear error"><?php //echo form_error('mota'); ?></div>
+                          <div name="name_error" class="clear error"><?php echo form_error('mota'); ?></div>
                       </div>
                       <div class="clear"></div>
                  </div>
@@ -81,10 +81,10 @@
                       </label>
                       <div class="formRight">
                           <span class="oneTwo">
-                              <input name="ghichu" id="param_ghichu" _autocheck="true" type="text" value="<?php //echo set_value('ghichu') ?>" />
+                              <input name="ghichu" id="param_ghichu" _autocheck="true" type="text" value="<?php echo $info->GhiChu ?>" />
                           </span>
                           <span name="name_autocheck" class="autocheck"></span>
-                          <div name="name_error" class="clear error"><?php// echo form_error('ghichu'); ?></div>
+                          <div name="name_error" class="clear error"><?php echo form_error('ghichu'); ?></div>
                       </div>
                       <div class="clear"></div>
                  </div>
