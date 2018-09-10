@@ -1,12 +1,15 @@
 <!--Tải slider chạy -->
 <?php $this->load->view('site/slide'); ?>
+<div class="clear">
+
+</div>
 <!--Tải sản phẩm -->
 <div class="box-center"><!-- The box-center product-->
     <div class="tittle-box-center">
 		   <h2>Sản phẩm mới</h2>
 		</div>
 		<div class="box-content-center product"><!-- The box-content-center -->
-		     <div class="product_item">
+		     <div class="product_item" style="width:170px;">
              <h3>
                 <a href="" title="Sản phẩm"> Tivi LG 520</a>
 	           </h3>
@@ -26,7 +29,7 @@
 	           <div class="clear"></div>
              </div>
          </div>
-         <div class="product_item">
+         <div class="product_item"style="width:170px;">
               <h3>
                 <a href="" title="Sản phẩm">Tivi JVC 500</a>
               </h3>
@@ -50,7 +53,7 @@
 	                <div class="clear"></div>
               </div>
           </div>
-          <div class="product_item">
+          <div class="product_item"style="width:170px;">
               <h3>
                 <a href="" title="Sản phẩm"> Tivi Toshiba</a>
 	            </h3>
