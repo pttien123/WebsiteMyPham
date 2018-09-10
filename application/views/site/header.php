@@ -14,8 +14,8 @@ $(function() {
 </script>
 <div class="top"><!-- The top -->
       <div id="logo"><!-- the logo -->
-           <a href="" title="Học lập trình website với PHP và MYSQL">
-	         <img src="images/logo.jpg" alt="Học lập trình website với PHP và MYSQL">
+           <a href="" title="Trang bán mỹ phẩm">
+	         <img src="images/logo.jpg" alt="Trang bán mỹ phẩm">
 	         </a>
       </div><!-- End logo -->
 
@@ -43,9 +43,7 @@ $(function() {
       <li class="active index-li"><a href="">Trang chủ </a></li>
       <li class=""><a href="info/view/1.html">Giới thiệu</a></li>
       <li class=""><a href="info/view/2.html">Hướng dẫn</a></li>
-      <li class=""><a href="san-pham.html">Sản phẩm</a></li>
-      <li class=""><a href="tin-tuc.html">Tin tức</a></li>
-      <li class=""><a href="video.html">Video</a></li>
+      <li class=""><a href="san-pham.html">Sản phẩm</a></li>      
       <li class=""><a href="lien-he.html">Liên hệ</a></li>
       <li class=""><a href="dang-ky.html">Đăng ký</a></li>
       <li class=""><a href="dang-nhap.html">Đăng nhập</a></li>

@@ -6,18 +6,18 @@ Nên để code vào file đó để nhìn gọn gàng hơn, dễ sửa hơn.
 -->
 <html>
   <head>
-      <?php $this->load->view('site/headtag'); ?>
+      <?php $this->load->view('site/headtag',$this->data); ?>
   </head>
 
   <body>
     <a href="#" id="back_to_top" style="display: block;">
 		   <img src="<?php echo public_url() ?>site/images/top.png">
 	  </a>
-    <div class= "wrapper">
+    <div class= "wraper">
         <div class ="header">
             <?php $this->load->view('site/header');?>
         </div>
-        <div class ="container">
+        <div  id="container">
             <div class ="left">
                 <?php $this->load->view('site/left');?>
             </div>

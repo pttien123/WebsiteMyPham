@@ -63,4 +63,4 @@
 		    width: auto;
 		}
 		</style>
-<title>Logo -Trang web bán mỹ phẩm</title>
+<title><?php echo $title ?></title>
