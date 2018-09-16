@@ -243,7 +243,7 @@ Class Product extends MY_Controller
     $unit = $this->unit_model->get_list();
     $this->data['unit'] =$unit;
 
-    //Nhấn submit Thêm
+    //Nhấn submit Cập nhật
     if($this->input->post())
     {
         $this->form_validation->set_rules('tenSP','Tên nhãn hiệu', 'required');
@@ -297,14 +297,25 @@ Class Product extends MY_Controller
               'GhiChu' => $ghichu,
               'BaiViet' => $baiviet
             );
-
+            //Mếu có thay đổi hình đại diện
             if($hinh != '')
             {
                 $data['Hinh'] = $hinh;
+                //Xóa file hiện có
+                $delete_path = './upload/product/'.$info->Hinh;
+                unlink($delete_path);
             }
+            //Nếu có thay đổi hình đính kèm
             if(!empty($dshinh))
             {
                 $data['DSHinh'] = $dshinh_json;
+                //Xóa hình hiện có
+                $img = json_decode($info->DSHinh);
+                foreach ($img as $link)
+                {
+                    $delete_path = './upload/product/'.$link;
+                    unlink($delete_path);
+                }
             }
 
             if($this->product_model->update($info->MaSP,$data))
