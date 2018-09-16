@@ -1,74 +1,59 @@
-
-			                  <!-- The Support -->
+<!-- The Support -->
 <div class="box-right">
-		<div class="title tittle-box-right">
-				<h2> Hỗ trợ trực tuyến </h2>
-		</div>
-		<div class="content-box">
-		</div>
+<div class="title tittle-box-right">
+<h2> Hỗ trợ trực tuyến </h2>
 </div>
-       <!-- End Support -->
+<div class="content-box">
+<!-- goi ra phuong thuc hien thi danh sach ho tro -->
+<div class='support'>
+<strong>Nguyễn Thị Ánh Hồng </strong>
 
-<!-- The news -->
-<div class="box-right">
-		<div class="title tittle-box-right">
-				<h2> Bài viết mới </h2>
-		</div>
-		<div class="content-box">
+<p>
+<img style="margin-bottom:-3px" src="<?php echo public_url()?>site/images/phone.png"> 0123456789
+</p>
 
-		</div>
-</div>		<!-- End news -->
+<p>
+<a rel="nofollow" href="mailto:1551010040.hong@gmail.com">
+<img style="margin-bottom:-3px" src="<?php echo public_url()?>site/images/email.png"> Email: 1551010040.hong@gmail.com
+</a>
+</p>
+<p>
+<a rel="nofollow" href="skype:tuyencnt90">
+<img style="margin-bottom:-3px" src="<?php echo public_url()?>site/images/skype.png"> Skype: hong1235			</a>
+</p>
+</div>
+</div>
+</div>
+<!-- End Support -->
 
 <!-- The Ads -->
 <div class="box-right">
-		<div class="title tittle-box-right">
-				<h2> Quảng cáo </h2>
-		</div>
+<div class="title tittle-box-right">
+<h2> Quảng cáo </h2>
+</div>
+<div class="content-box">
 
-		<div class="content-box">
-				<a href="">
-						<img src="images/ads.png">
-				</a>
-		</div>
+<a href="">
+<img  src="<?php echo public_url() ?>site/images/qc.png">
+</a>
+<a href="">
+<img  src="<?php echo public_url() ?>site/images/bcv.jpg" >
+</a>
+
+
+
+</div>
 </div>
 <!-- End Ads -->
 
 <!-- The Fanpage -->
 <div class="box-right">
-		<div class="title tittle-box-right">
-				<h2> Fanpage </h2>
-		</div>
-		<div class="content-box">
-
-				<iframe src="http://www.facebook.com/plugins/likebox.php?href=https://www.facebook.com/nobitacnt&amp;width=190&amp;height=300&amp;show_faces=true&amp;colorscheme=light&amp;stream=false&amp;border_color&amp;header=true" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:190px; height:300px;" allowtransparency="true">
-				</iframe>
-
-		</div>
+<div class="title tittle-box-right">
+<h2> Fanpage </h2>
 </div>
-<!-- End Fanpage -->
+<div class="content-box">
 
-<!-- The Fanpage -->
-<div class="box-right">
-		<div class="title tittle-box-right">
-				<h2> Thống kê truy cập </h2>
-		</div>
-		<div class="content-box">
-		<center>
-				<!-- Histats.com  START  (standard)-->
-				<script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script><script src="http://s10.histats.com/js15.js" type="text/javascript"></script>
-				<a href="http://www.histats.com" target="_blank" title="hit counter">
-						<script type="text/javascript">
-								try {Histats.start(1,2138481,4,401,118,80,"00011111");
-								Histats.track_hits();} catch(err){};
-						</script>
-				</a>
-				<noscript>
-						<a href="http://www.histats.com" target="_blank">
-								<img  src="http://sstatic1.histats.com/0.gif?2138481&101" alt="hit counter" border="0">
-						</a>
-				</noscript>
-				<!-- Histats.com  END  -->
-		</center>
-		</div>
+<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fbicicosmetic%2F&tabs&width=180&height=100&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="180" height="100" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+</div>
 </div>
 <!-- End Fanpage -->

@@ -19,11 +19,11 @@ Nên để code vào file đó để nhìn gọn gàng hơn, dễ sửa hơn.
         </div>
         <div  id="container">
             <div class ="left">
-                <?php $this->load->view('site/left');?>
+                <?php $this->load->view('site/left',$this->data);?>
             </div>
 
             <div class ="content" style="align=center;">
-                <?php $this->load->view($temp); ?>
+                <?php $this->load->view($temp,$this->data); ?>
             </div>
             <div class ="right ">
                   <?php $this->load->view('site/right');?>

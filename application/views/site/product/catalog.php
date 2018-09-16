@@ -1,20 +1,14 @@
-<!--Tải slider chạy -->
-<?php $this->load->view('site/slide',$this->data); ?>
-<div class="clear">
-
-</div>
-<!--Tải sản phẩm -->
 <div class="box-center"><!-- The box-center product-->
     <div class="tittle-box-center">
-		   <h2>Sản phẩm mới</h2>
+		   <h2><?php echo $catalog->TenDM ?>( <?php echo $total_rows ?> sản phẩm)</h2>
 		</div>
 		<div class="box-content-center product"><!-- The box-content-center -->
-		     <?php foreach ($new_product as $row) : ?>
+		     <?php foreach ($list as $row) : ?>
          <div class="product_item"style="width:170px;">
               <h3>
                 <a href="<?php echo base_url('product/view/'.$row->MaSP) ?>" title="<?php echo $row->TenSP ?>"><?php echo $row->TenSP ?></a>
               </h3>
-              <div class="product_img">
+              <div class="product_img" >
                   <a href="<?php echo base_url('product/view/'.$row->MaSP) ?>" title="<?php echo $row->TenSP ?>">
                       <img src="<?php echo base_url('upload/product/'.$row->Hinh) ?>" alt="<?php echo $row->TenSP ?>">
                   </a>
@@ -41,8 +35,9 @@
               </div>
           </div>
         <?php endforeach; ?>
-
-
 		          <div class="clear"></div>
 		  </div><!-- End box-content-center -->
+      <div class="pagination">
+         <?php echo $this->pagination->create_links(); ?>
+      </div>
 </div>
