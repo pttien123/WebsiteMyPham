@@ -177,7 +177,7 @@
 								<div class="formRight">
 										<div class="left">
 											<input type="file" id="image" name="image"><br>
-                      <img src="<?php echo base_url('upload/product/').$info->Hinh ?>" alt="" style="width:100px;height:100px;margin:5px;">
+                      <img src="<?php echo base_url('upload/product/').$info->Hinh ?>" title="<?php echo $info->Hinh ?>"alt="" style="width:100px;height:100px;margin:5px;">
                     </div>
 										<div name="image_error" class="clear error"></div>
 								</div>
@@ -191,7 +191,7 @@
 										<div class="left">
 											<input type="file" id="image_list" name="image_list[]" multiple=""><br>
                       <?php foreach ($dshinh as $img ): ?>
-                        <img src="<?php echo base_url('upload/product/').$img ?>" alt="" style="width:100px;height:100px;margin:5px;">
+                        <img src="<?php echo base_url('upload/product/').$img ?>" title="<?php echo $img ?>" alt="" style="width:100px;height:100px;margin:5px;">
                       <?php endforeach; ?>
                     </div>
 										<div name="image_list_error" class="clear error"></div>
