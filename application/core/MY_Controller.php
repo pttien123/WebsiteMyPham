@@ -34,6 +34,21 @@ class MY_Controller extends CI_Controller
       {
         //Xử lý các dữ liệu cho trang ngoài
         $this->load->library('session');
+        //Lấy dữ liệu danh mục
+        $this->load->model('catalog_model');
+        //Lấy các danh mục cha
+        $input =array();
+        $input['where'] = array('DMCha' => 0);
+        $input['order'] = array('MaDM' , 'ASC' );
+        $catalog_list = $this->catalog_model->get_list($input);
+        //Lấy các danh mục con
+        foreach ($catalog_list as $row)
+        {
+            $input['where'] = array('DMCha' => $row->MaDM);
+            $sub = $this->catalog_model->get_list($input);
+            $row->sub = $sub;
+        }
+        $this->data['catalog_list'] = $catalog_list;
       }
     }
   }
