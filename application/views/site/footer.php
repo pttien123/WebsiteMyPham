@@ -11,7 +11,7 @@
 	 </div><!-- End footer_text -->
 
 	  <div id="footer_face">  <!-- The footer_face -->
-	        <a title="trên facebook" target="_blank" href="https://www.facebook.com/nobitacnt" rel="nofollow">
+	        <a title="trên facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100010364806818" rel="nofollow">
 	             <img alt="trên facebook" src="<?php echo public_url('site/images/')?>facebook.png">
 	        </a>
 
