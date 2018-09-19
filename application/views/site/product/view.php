@@ -83,7 +83,7 @@ $(document).ready(function() {
 				         <div class='clear' style='height:10px'></div>
 				         <div class="clearfix" >
 							<ul id="thumblist" >
-								
+
 								<li>
 									 <a  href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: '<?php echo base_url('upload/product/'.$product->Hinh) ?>',largeimage: '<?php echo base_url('upload/product/'.$product->Hinh) ?>'}">
 									 <img src='<?php echo base_url('upload/product/'.$product->Hinh) ?>'>
@@ -109,13 +109,15 @@ $(document).ready(function() {
 		               <p class='option'>
                      Giá:
                      <?php if($product->GiamGia >0): ?>
-                       <span class='product_price'><?php echo number_format($product->DonGia * $product->GiamGia) ?>đ</span>
+                       <span class='product_price'><?php echo number_format($product->DonGia * (1-$product->GiamGia)) ?>đ</span>
                        <span class="price_old"><?php echo number_format($product->DonGia) ?>đ</span>
                      <?php else: ?>
 		                   <span class='product_price'><?php echo number_format($product->DonGia) ?>đ</span>
                      <?php endif; ?>
 		               </p>
-
+									 <p class='option' style="color:red;" >
+		                  Giảm giá: <b><?php echo $product->GiamGia *100 ?>%</b>
+		               </p>
 
 		                <p class='option'>
 		                  Danh mục:
@@ -135,11 +137,11 @@ $(document).ready(function() {
 		                  Đơn vị: <b><?php echo $unit->TenDV ?></b>
 		               </p>
 		               		               		               <p class='option'>
-		                  Tặng quà: <b>0</b>
+		                  Tặng quà: <b></b>
 		               </p>
-
+									 <?php $product->LuotDG != 0? $score = $product->DiemDG /  $product->LuotDG : $score=0; ?>
 		               Đánh giá &nbsp;
-                       <span class='raty_detailt' style = 'margin:5px' id='9' data-score='4'></span>
+                       <span class='raty_detailt' style = 'margin:5px' id='<?php echo $product->MaSP ?>' data-score='<?php echo $score ?>'></span>
                        | Tổng số: <b  class='rate_count'><?php echo $product->LuotDG ?></b>
 
 		               <div class='action'>

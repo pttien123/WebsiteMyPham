@@ -24,13 +24,14 @@
 
             <?php endif; ?>
               <center>
-                  <div class="raty" style="margin: 10px 0px; width: 100px;" id="8" data-score="3.4">
+                <?php $row->LuotDG != 0? $score = $row->DiemDG /  $row->LuotDG : $score=0; ?>
+                <div class="raty" style="margin: 10px 0px; width: 100px;" id="<?php echo $row->MaSP ?>" data-score="<?php echo $score ?>">
 
-                  </div>
+                </div>
               </center>
               <div class="action">
                   <p style="float:left;margin-left:10px">Giảm: <b style="color:red;"><?php echo $row->GiamGia *100 ?>%</b></p>
-	                <a class="button" href="them-vao-gio-8.html" title="Mua ngay" >Mua ngay</a>
+	                <a class="button" href="<?php echo base_url('product/view/'.$row->MaSP) ?>" title="Chi tiết sản phẩm" >Chi tiết</a>
 	                <div class="clear"></div>
               </div>
           </div>
@@ -38,6 +39,6 @@
 		          <div class="clear"></div>
 		  </div><!-- End box-content-center -->
       <div class="pagination">
-         
+
       </div>
 </div>
