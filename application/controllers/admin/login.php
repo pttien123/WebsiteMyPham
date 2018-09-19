@@ -34,7 +34,7 @@ class Login extends MY_Controller
       }
       //Load view của trang login
       $this->data['title'] = 'Đăng nhập';
-      $this->load->view('admin/Login/index');
+      $this->load->view('admin/Login/index',$this->data);
   }
 
   /*
