@@ -49,6 +49,10 @@ class MY_Controller extends CI_Controller
             $row->sub = $sub;
         }
         $this->data['catalog_list'] = $catalog_list;
+
+        //Load thư viện cart - thư viện giỏ hàng
+        $this->load->library('cart');
+        $this->data['total_items'] = $this->cart->total_items();
       }
     }
   }
