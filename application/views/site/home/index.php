@@ -36,7 +36,7 @@
               </center>
               <div class="action">
                   <p style="float:left;margin-left:10px">Giảm: <b style="color:red;"><?php echo $row->GiamGia *100 ?>%</b></p>
-	                <a class="button" href="them-vao-gio-8.html" title="Mua ngay" >Mua ngay</a>
+	                <a class="button" href="<?php echo base_url('product/view/'.$row->MaSP) ?>" title="Mua ngay" >Mua ngay</a>
 	                <div class="clear"></div>
               </div>
           </div>
