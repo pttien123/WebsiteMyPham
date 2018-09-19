@@ -22,7 +22,7 @@
 
               <p class="price">
                 <?php if($row->GiamGia >0): ?>
-                  <?php echo number_format($row->DonGia * $row->GiamGia) ?>đ
+                  <?php echo number_format($row->DonGia * (1-$row->GiamGia)) ?>đ
                   <span class="price_old"><?php echo number_format($row->DonGia) ?>đ</span>
                 <?php else: ?>
                   <?php echo number_format($row->DonGia) ?>đ
@@ -35,7 +35,7 @@
                   </div>
               </center>
               <div class="action">
-
+                  <p style="float:left;margin-left:10px">Giảm: <b style="color:red;"><?php echo $row->GiamGia *100 ?>%</b></p>
 	                <a class="button" href="them-vao-gio-8.html" title="Mua ngay" >Mua ngay</a>
 	                <div class="clear"></div>
               </div>

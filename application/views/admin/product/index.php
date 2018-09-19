@@ -98,7 +98,7 @@
 						<div class="clear"></div>
 					</div>
 
-					<a href="product/view/9.html" class="tipS" title="" target="_blank">
+					<a href="" class="tipS" title="" target="_blank">
 					<b><?php echo $row->TenSP?></b>
 					</a>
 
