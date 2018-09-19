@@ -83,6 +83,12 @@ $(document).ready(function() {
 				         <div class='clear' style='height:10px'></div>
 				         <div class="clearfix" >
 							<ul id="thumblist" >
+								
+								<li>
+									 <a  href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: '<?php echo base_url('upload/product/'.$product->Hinh) ?>',largeimage: '<?php echo base_url('upload/product/'.$product->Hinh) ?>'}">
+									 <img src='<?php echo base_url('upload/product/'.$product->Hinh) ?>'>
+									 </a>
+							 </li>
 
                   <?php if(is_array($image_list)):?>
                     <?php foreach($image_list as $img): ?>

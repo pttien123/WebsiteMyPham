@@ -348,6 +348,21 @@ Class Product extends MY_Controller
         $this->session->set_flashdata('message','Không tồn tại sản phẩm này');
         redirect(admin_url('product'));
     }
+
+    //Xoa hinh
+    $hinh = $info->Hinh;
+    //Xóa file hiện có
+    $delete_path = './upload/product/'.$info->Hinh;
+    unlink($delete_path);
+
+
+    //Xóa hình hiện có
+    $img = json_decode($info->DSHinh);
+    foreach ($img as $link)
+    {
+        $delete_path = './upload/product/'.$link;
+        unlink($delete_path);
+    }
     $this->product_model->delete($id);
     $this->session->set_flashdata('message','Xóa thành công');
     redirect(admin_url('product'));
