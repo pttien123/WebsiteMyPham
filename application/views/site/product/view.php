@@ -5,7 +5,7 @@
 jQuery('document').ready(function(){
 	 jwplayer('mediaspace').setup({
     'flashplayer': '<?php echo public_url()?>site/tivi/player.swf',
-    'file': 'https://www.youtube.com/watch?v=zAEYQ6FDO5U',
+    'file': 'https://www.youtube.com/watch?v=JLj_Lpdg5Nw',
     'controlbar': 'bottom',
     'width': '560',
     'height': '315',
@@ -134,10 +134,10 @@ $(document).ready(function() {
 
 		               Đánh giá &nbsp;
                        <span class='raty_detailt' style = 'margin:5px' id='9' data-score='4'></span>
-                       | Tổng số: <b  class='rate_count'>1</b>
+                       | Tổng số: <b  class='rate_count'><?php echo $product->LuotDG ?></b>
 
 		               <div class='action'>
-				            <a class='button' style='float:left;padding:8px 15px;font-size:16px' href="" title='Mua ngay'>Thêm vào giỏ hàng</a>
+				            <a class='button' style='float:left;padding:8px 15px;font-size:16px' href="<?php echo base_url('cart/add/'.$product->MaSP) ?>" title='Mua ngay'>Thêm vào giỏ hàng</a>
 				            <div class='clear'></div>
 			            </div>
 

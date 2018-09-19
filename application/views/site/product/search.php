@@ -1,6 +1,6 @@
 <div class="box-center"><!-- The box-center product-->
     <div class="tittle-box-center">
-		   <h2><?php echo $catalog->TenDM ?>( <?php echo $total_rows ?> sản phẩm)</h2>
+		   <h2>Kết quả tìm kiếm với từ khóa "<?php echo $key ?>"</h2>
 		</div>
 		<div class="box-content-center product"><!-- The box-content-center -->
 		     <?php foreach ($list as $row) : ?>
@@ -38,6 +38,6 @@
 		          <div class="clear"></div>
 		  </div><!-- End box-content-center -->
       <div class="pagination">
-         <?php echo $this->pagination->create_links(); ?>
+         
       </div>
 </div>

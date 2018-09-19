@@ -80,7 +80,7 @@ class Product extends MY_Controller
         //Lay thong tin segment o vtri 4
         $segment = $this->uri->segment(4);
         $segment = intval($segment);
-        //Lay 2 sp, bat dau tu vi tri thu $segment
+        //Lay 4 sp, bat dau tu vi tri thu $segment
         $input['limit'] = array($config['per_page'], $segment);
 
         //load csdl lay danh sach san pham theo dieu kien phan trang
@@ -114,7 +114,7 @@ class Product extends MY_Controller
         //Lấy danh sách ảnh sản phẩm kèm theo
         $image_list = json_decode($product->DSHinh);
         $this->data['image_list'] = $image_list;
-        
+
         $this->load->model('catalog_model');
         $catalog = $this->catalog_model->get_info($product->MaDM);
         $this->data['catalog'] = $catalog;
@@ -129,6 +129,77 @@ class Product extends MY_Controller
 
         $this->data['title'] = 'Thông tin sản phẩm '.$product->TenSP;
         $this->data['temp'] = 'site/product/view';
+        $this->load->view('site/layoutmaster', $this->data);
+    }
+
+    /*
+    * Tìm kiếm sp theo tên
+    */
+    function search()
+    {
+        if($this->uri->segment(3) == 'auto')
+        {
+              $key = $this->input->get('term');
+        }
+        else {
+              $key = $this->input->get('key-search');
+        }
+
+        $this->data['key'] = $key;
+
+        $input = array();
+        $input['like'] = array('TenSP',$key);
+        $list = $this->product_model->get_list($input);
+        $this->data['list'] = $list;
+
+        if($this->uri->segment(3) == 'auto')
+        {
+            //Xử lý autocomplete
+            $result = array();
+            foreach ($list as $row)
+            {
+                $item = array(
+                  'id' => $row->MaSP,
+                  'label' => $row->TenSP,
+                  'value' => $row->TenSP
+                );
+                $result[]= $item;
+            }
+            //Lấy dữ liệu dưới dạng json code
+            die(json_encode($result));
+        }
+        else {
+          //Laod giao diện
+          $this->data['title'] = 'Tìm kiếm sản phẩm tên "'.$key .'"';
+          $this->data['temp'] = 'site/product/search';
+          $this->load->view('site/layoutmaster', $this->data);
+        }
+    }
+
+    /*
+    * Tìm kiếm sp theo giá
+    */
+    function search_price()
+    {
+        //Lấy thông tin khoảng giá mà khách muốn tìm kiếm
+        $price_from = intval($this->input->get('price_from'));
+        $price_to = intval($this->input->get('price_to'));
+        $this->data['price_from'] = $price_from;
+        $this->data['price_to'] = $price_to;
+        //Tạo biến điều kiện lọc
+        $input = array();
+        $input['where'] = array(
+            'DonGia >=' => $price_from,
+            'DonGia <=' => $price_to
+        );
+
+        //Lấy danh sách với đk lọc
+        $list = $this->product_model->get_list($input);
+        $this->data['list'] = $list;
+
+        //Laod giao diện
+        $this->data['title'] = 'Tìm kiếm sản phẩm theo giá';
+        $this->data['temp'] = 'site/product/search_price';
         $this->load->view('site/layoutmaster', $this->data);
     }
 }

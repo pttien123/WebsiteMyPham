@@ -1,6 +1,6 @@
 <div class="box-center"><!-- The box-center product-->
     <div class="tittle-box-center">
-		   <h2><?php echo $catalog->TenDM ?>( <?php echo $total_rows ?> sản phẩm)</h2>
+		   <h2>Kết quả tìm kiếm với giá từ "<?php echo $price_from ?>" đến "<?php echo $price_to ?>" </h2>
 		</div>
 		<div class="box-content-center product"><!-- The box-content-center -->
 		     <?php foreach ($list as $row) : ?>
@@ -30,7 +30,7 @@
               </center>
               <div class="action">
                   <p style="float:left;margin-left:10px">Giảm: <b style="color:red;"><?php echo $row->GiamGia *100 ?>%</b></p>
-	                <a class="button" href="them-vao-gio-8.html" title="Mua ngay" >Mua ngay</a>
+	                <a class="button" href="<?php echo base_url('product/view') ?>" title="Mua ngay" >Mua ngay</a>
 	                <div class="clear"></div>
               </div>
           </div>
@@ -38,6 +38,6 @@
 		          <div class="clear"></div>
 		  </div><!-- End box-content-center -->
       <div class="pagination">
-         <?php echo $this->pagination->create_links(); ?>
+
       </div>
 </div>
