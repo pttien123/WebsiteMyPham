@@ -202,5 +202,61 @@ class Product extends MY_Controller
         $this->data['temp'] = 'site/product/search_price';
         $this->load->view('site/layoutmaster', $this->data);
     }
+
+    /*
+    * Xử lý việc đánh giá
+    */
+    function raty()
+    {
+        $result = array();
+
+        $id = $this->input->post('id'); //Lấy mã sản phẩm gửi lên từ trang ajax
+        //$id = (!is_numberic($id))?0:$id;
+        $info = $this->product_model->get_info($id);
+        if(!$info)
+        {
+            exit();
+        }
+        // //Kiểm tra đã đăng nhập hay chưa
+        if(!$this->session->userdata('user_id_logged'))
+        {
+            $result['msg'] = "Bạn cần đăng nhập để thực hiện chức năng này";
+            $output        = json_encode($result); //trả về mã json
+            echo $output;
+            exit();
+        }
+
+        //Kiểm tra đã bình chọn hay chưa
+        $raty = $this->session->userdata('session_raty');
+        $raty = (!is_array($raty)) ? array() : $raty;
+        
+        //Nếu đã tồn tại mã sp này trong session đánh giá
+        if(isset($raty[$id]))
+        {
+            $result['msg'] = "Bạn chỉ được đánh giá 1 lần";
+            $output        = json_encode($result); //trả về mã json
+            echo $output;
+            exit();
+        }
+        //Cập nhật trạng thái đã bình chọn
+        $raty[$id] = true;
+        $this->session->set_userdata('session_raty',$raty);
+
+        //Cập nhật vào csdl
+        $score = $this->input->post('score');//Lấy điểm gửi lên từ trang ajax
+        $data = array(
+          'DiemDG' => $info->DiemDG + $score, //Tổng điểm đánh giá
+          'LuotDG' => $info->LuotDG + 1 //Tổng lượt đánh giá
+        );
+        $this->product_model->update($id,$data);
+
+        //Khai báo dữ liệu trả về
+        $result['complete'] = TRUE;
+        $result['msg'] = "Cảm ơn bạn đã đánh giá cho sản phẩm";
+        $output        = json_encode($result); //trả về mã json
+        echo $output;
+        exit();
+
+    }
 }
  ?>

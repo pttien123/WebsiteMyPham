@@ -15,7 +15,7 @@ class Cart extends MY_Controller
         //Thông tin sp trong giỏ hàng
         $cart = $this->cart->contents();
         $this->data['cart'] = $cart;
-
+        
         //Tổng số sp trong giỏ hàng
         $total_items = $this->cart->total_items();
         $this->data['total_items'] = $total_items;
@@ -42,7 +42,7 @@ class Cart extends MY_Controller
         //Biến tổng số sp
         $qty = 1;
         $price = $product->DonGia;
-        $discount = $product->GiamGia * 100 .'%';
+        $discount = $product->GiamGia;
         if($product->GiamGia >0)
         {
             $price = $product->DonGia * (1-$product->GiamGia);

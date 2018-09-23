@@ -50,6 +50,20 @@ class MY_Controller extends CI_Controller
         }
         $this->data['catalog_list'] = $catalog_list;
 
+        //Kiểm tra đăng nhập hay chưa
+        $user_id = $this->session->userdata('user_id_logged');
+        $this->data['user_id'] = $user_id;
+        if($user_id)
+        {
+            $this->load->model('user_model');
+            $user_info = $this->user_model->get_info($user_id);
+            $this->data['user_info'] = $user_info;
+        }
+        else
+        {
+
+        }
+
         //Load thư viện cart - thư viện giỏ hàng
         $this->load->library('cart');
         $this->data['total_items'] = $this->cart->total_items();

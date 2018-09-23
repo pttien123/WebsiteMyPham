@@ -1,12 +1,6 @@
 <style >
-    table#cart_contents
-    td{padding: 10px; border: 1px solid; text-align: center;}
-    tr{
-        border: 1px solid; text-align: center;
-    }
-    th{
-      border: 1px solid; text-align: center;
-    }
+    table td{border-bottom: 1px solid;padding: 5px; text-align: justify;font-size: 12px;margin: auto;}
+    th{padding: 5px;border-bottom: 1px solid}
 </style>
 <div class="box-center"><!-- The box-center product-->
     <div class="tittle-box-center">
@@ -39,12 +33,16 @@
                         </div>
                         <b><?php echo $row['name']?></b>
                     </td>
-                    <td><?php echo number_format($row['unit_price']) ?></td>
+                    <td><?php echo number_format($row['unit_price']) ?>đ</td>
                     <td>
                       <input type="number" step="1" max="5" min="1" style="width:30px" name="qty_<?php echo $row['id'] ?>" value="<?php echo $row['qty']?>">
                     </td>
-                    <td><?php echo $row['discount']?></td>
-                    <td><?php echo number_format($row['subtotal']) ?></td>
+                    <td>
+
+                      <?php echo $row['discount'] *100;?>%
+
+                    </td>
+                    <td><?php echo number_format($row['subtotal']) ?>đ</td>
                     <td>
                         <a href="<?php echo base_url('cart/delete/').$row['id'] ?>">Xóa</a>
                     </td>
@@ -52,21 +50,32 @@
                 </tr>
                 <?php endforeach; ?>
                 <tr>
+                  <td colspan="5">Tiền ship</td>
+                  <td><?php echo number_format(30000); ?>đ</td>
+                  <td></td>
+                </tr>
+                <tr>
                     <td colspan="5" style="color:red;"><b>Tổng tiền thanh toán: </b></td>
-                    <td style="color:red;"><?php echo number_format($sum) ?></td>
+                    <td style="color:red;"><?php echo number_format($sum+30000) ?>đ</td>
                     <td>
                         <a href="<?php echo base_url('cart/delete/')?>" type="button">Xóa toàn bộ</a>
                     </td>
                 </tr>
                 <tr>
                   <td colspan="7">
-                      <button type="submit" name="update">Cập nhật </button>
-                      <button type="" name="pay">Thanh toán</button>
+                      <button type="submit" style="float:left;padding:5px;background-color:lightblue;font-size:14px;">Cập nhật </button>
+                      <a href="<?php echo base_url('order/checkout') ?>" class="button">Thanh toán</a>
                   </td>
                 </tr>
             </tbody>
         </table>
+
       </form>
+
+      <div >
+
+          <p style="color:gray;font-style:italic;">*Nên nhấn cập nhật giỏ hàng trước khi nhấn thanh toán để cập nhật số lượng muốn mua của mỗi sản phẩm </p>
+      </div>
     <?php else: ?>
       <p>Không có sản phẩm trong giỏ hàng</p>
     <?php endif; ?>

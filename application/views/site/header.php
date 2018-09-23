@@ -45,7 +45,12 @@ $(function() {
       <li class=""><a href="info/view/2.html">Hướng dẫn</a></li>
       <li class=""><a href="san-pham.html">Sản phẩm</a></li>
       <li class=""><a href="lien-he.html">Liên hệ</a></li>
-      <li class=""><a href="dang-ky.html">Đăng ký</a></li>
-      <li class=""><a href="dang-nhap.html">Đăng nhập</a></li>
+      <?php if(isset($user_info)): ?>
+      <li class=""><a href="<?php echo base_url('user/index') ?>">Xin chào: <?php echo $user_info->HoKH.' '.$user_info->TenKH ?></a></li>
+      <li class=""><a href="<?php echo base_url('user/logout') ?>">Đăng xuất</a></li>
+      <?php else: ?>
+      <li class=""><a href="<?php echo base_url('user/sign_up') ?>">Đăng ký</a></li>
+      <li class=""><a href="<?php echo base_url('user/login') ?>">Đăng nhập</a></li>
+      <?php endif; ?>
     </ul>
 </div><!-- End menu -->			   <!-- End box-header  -->

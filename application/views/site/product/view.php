@@ -5,7 +5,7 @@
 jQuery('document').ready(function(){
 	 jwplayer('mediaspace').setup({
     'flashplayer': '<?php echo public_url()?>site/tivi/player.swf',
-    'file': 'https://www.youtube.com/watch?v=JLj_Lpdg5Nw',
+    'file': '<?php echo $product->Video ?>',
     'controlbar': 'bottom',
     'width': '560',
     'height': '315',
@@ -48,13 +48,15 @@ $(document).ready(function() {
     	    return $(this).attr('data-score');
     	  },
     	  half    : true,
+				//Khi click vào ngôi sao sẽ gọi đến hàm này
+				// biến score: khi click bao nhiêu ngôi sao thì sẽ trả về số điểm tương ứng
     	  click: function(score, evt) {
         	  var rate_count = $('.rate_count');
         	  var rate_count_total = rate_count.text();
     		  $.ajax({
-	  				url: 'http://localhost/webphp/product/raty.html',
+	  				url: '<?php echo base_url('product/raty') ?>',
 	  				type: 'POST',
-	  				data: {'id':'9','score':score},
+	  				data: {'id':'<?php echo $product->MaSP ?>','score':score},
 	  				dataType: 'json',
 	  				success: function(data)
 	  				{
@@ -139,9 +141,9 @@ $(document).ready(function() {
 		               		               		               <p class='option'>
 		                  Tặng quà: <b></b>
 		               </p>
-									 <?php $product->LuotDG != 0? $score = $product->DiemDG /  $product->LuotDG : $score=0; ?>
+									 <?php $product->LuotDG > 0? $raty_score = ($product->DiemDG /  $product->LuotDG) : $score=0; ?>
 		               Đánh giá &nbsp;
-                       <span class='raty_detailt' style = 'margin:5px' id='<?php echo $product->MaSP ?>' data-score='<?php echo $score ?>'></span>
+                       <span class='raty_detailt' style = 'margin:5px' id='<?php echo $product->MaSP ?>' data-score='<?php echo $raty_score ?>'></span>
                        | Tổng số: <b  class='rate_count'><?php echo $product->LuotDG ?></b>
 
 		               <div class='action'>

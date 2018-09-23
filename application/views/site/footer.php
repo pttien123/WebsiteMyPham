@@ -6,7 +6,7 @@
 		 <p>Địa chỉ: 123 ABC Phường x Quận y</p>
 		 <p>Email: vidu@gmail.com</p>
      <p>Điện thoại liên hệ: 0123456789</p>
-		 <p>Fanpage: <a href="https://www.facebook.com/nobitacnt/">https://www.facebook.com/nobitacnt/</a></p>
+		 <p>Fanpage: <a href="https://www.facebook.com/profile.php?id=100005379429714">https://www.facebook.com/profile.php?id=100005379429714</a></p>
 
 	 </div><!-- End footer_text -->
 
