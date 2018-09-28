@@ -64,3 +64,4 @@
 		}
 		</style>
 <title><?php echo $title ?></title>
+<script src='https://www.google.com/recaptcha/api.js'></script>

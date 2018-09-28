@@ -39,14 +39,14 @@ class User extends MY_Controller
         if($this->input->post())
         {
              //giatri1: tên ; giatri2: Nội dung xuất; giatri3: điều kiện kiểm tra
-            $this->form_validation->set_rules('email','Email','required|valid_email|callback_check_email');
-            $this->form_validation->set_rules('password','Mật khẩu','required|min_length[8]|max_length[32]');
-            $this->form_validation->set_rules('re_password','Nhập lại mật khẩu','required|matches[password]');
-            $this->form_validation->set_rules('last_name','Họ và tên lót','required|max_length[50]');
-            $this->form_validation->set_rules('name','Tên','required|max_length[20]');
-            $this->form_validation->set_rules('address','Địa chỉ','required');
-            $this->form_validation->set_rules('phone','Số điện thoại','required|max_length[15]|min_length[9]');
-
+            $this->form_validation->set_rules('email','Email','required|valid_email|trim|callback_check_email');
+            $this->form_validation->set_rules('password','Mật khẩu','required|trim|min_length[8]|max_length[32]');
+            $this->form_validation->set_rules('re_password','Nhập lại mật khẩu','required|trim|matches[password]');
+            $this->form_validation->set_rules('last_name','Họ và tên lót','required|trim|max_length[50]');
+            $this->form_validation->set_rules('name','Tên','required|trim|max_length[20]');
+            $this->form_validation->set_rules('address','Địa chỉ','trim|required');
+            $this->form_validation->set_rules('phone','Số điện thoại','required|trim|max_length[15]|min_length[9]');
+            $this->form_validation->set_rules('recaptcha','recaptcha','required');
             if($this->form_validation->run())
             {
                 $email      = $this->input->post('email');
@@ -94,7 +94,7 @@ class User extends MY_Controller
     }
 
 
-    /*
+    /*  
     * Đăng nhập
     */
     function login()
@@ -290,7 +290,7 @@ class User extends MY_Controller
     }
 
     /*
-    * Thông báo xác nhận
+    * Lịch sử mua hàng
     */
     function history()
     {
@@ -333,7 +333,7 @@ class User extends MY_Controller
     }
 
     /*
-    * Thông báo xác nhận
+    * Chi tiết đơn hàng
     */
     function detail()
     {

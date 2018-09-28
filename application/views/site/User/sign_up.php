@@ -84,7 +84,10 @@
 						</div>
 						<div class="clear"></div>
 				  </div> -->
+          <!--Recaptcha của google, bản thử nghiệm  -->
+          <div class="g-recaptcha" name="recaptcha" data-sitekey=" 6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
 
+          <div id="address_error" class="error"><?php echo form_error('recaptcha') ?></div>
 				  <div class="form-row">
 						<label class="form-label">&nbsp;</label>
 						<div class="form-item">
