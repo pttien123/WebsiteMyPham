@@ -46,7 +46,7 @@ class User extends MY_Controller
             $this->form_validation->set_rules('name','Tên','required|trim|max_length[20]');
             $this->form_validation->set_rules('address','Địa chỉ','trim|required');
             $this->form_validation->set_rules('phone','Số điện thoại','required|trim|max_length[15]|min_length[9]');
-            $this->form_validation->set_rules('recaptcha','recaptcha','required');
+            //$this->form_validation->set_rules('recaptcha','recaptcha','required');
             if($this->form_validation->run())
             {
                 $email      = $this->input->post('email');
@@ -94,7 +94,7 @@ class User extends MY_Controller
     }
 
 
-    /*  
+    /*
     * Đăng nhập
     */
     function login()
