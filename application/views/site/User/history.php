@@ -1,5 +1,5 @@
 <style >
-    table td{border-bottom: 1px solid;padding: 5px; text-align: justify;font-size: 12px;margin: auto;}
+    table td{border-bottom: 1px solid;padding: 5px; text-align: justify;font-size: 12px;margin: auto;border-collapse: collapse;}
     th{padding: 5px;border-bottom: 1px solid}
 </style>
 <div class="box-center">
@@ -24,11 +24,11 @@
         <tbody>
           <tr>
             <td ><?php echo $row->MaDH?></td>
-            <td><?php echo $row->TongTien?></td>
+            <td><?php echo number_format($row->TongTien)?>đ</td>
             <td><?php echo $row->NgayDat?></td>
             <td><?php echo $row->NoiGiao?></td>
             <td><?php echo $row->TinhTrang ?></td>
-            <td> <a href="<?php echo base_url('user/detail/'.$row->MaDH) ?>" style="font-style:italic;"> Xem chi tiết</a> </td>
+            <td> <a href="<?php echo base_url('user/detail/'.$row->MaDH) ?>" style="font-style:italic;color:blue;"> Xem chi tiết</a> </td>
           </tr>
 
         </tbody>
