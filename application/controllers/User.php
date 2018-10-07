@@ -341,6 +341,14 @@ class User extends MY_Controller
         {
             redirect(base_url('user/login'));
         }
+        //Thông tin user
+        $this->load->model('user_model');
+        $id = $this->session->userdata('user_id_logged');
+        $user = $this->user_model->get_info($id);
+        //LoaiKH
+        $this->load->model('usertype_model');
+        $type = $this->usertype_model->get_info($user->LoaiKH);
+        $this->data['type'] = $type;
 
         $order_id = $this->uri->segment(3);
         $input['where'] = array('MaDH' => $order_id);
