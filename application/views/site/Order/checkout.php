@@ -8,7 +8,7 @@
 
               <div class="form-row">
 
-              <label class="form-label" for="param_email">Loại thành viên</label>
+              <label class="form-label" for="param_type">Loại thành viên</label>
               <div class="form-item">
                     <b style="color:red;"><?php echo $type->TenLoai?></b>
               </div>

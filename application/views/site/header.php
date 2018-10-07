@@ -14,8 +14,8 @@ $(function() {
 </script>
 <div class="top"><!-- The top -->
       <div id="logo"><!-- the logo -->
-           <a href="<?php echo base_url() ?>" title="Trang bán mỹ phẩm">
-	         <img src="images/logo.jpg" alt="Trang bán mỹ phẩm">
+           <a href="<?php echo base_url() ?>" title="Bloom Shop">
+	         <img src="<?php echo public_url('site/') ?>images/logo.jpg" alt="Bloom Shop" style="width:250px;height:85px;">
 	         </a>
       </div><!-- End logo -->
 
@@ -41,10 +41,10 @@ $(function() {
 <div id="menu"><!-- the menu -->
     <ul class="menu_top">
       <li class="active index-li"><a href="<?php echo base_url() ?>">Trang chủ </a></li>
-      <li class=""><a href="info/view/1.html">Giới thiệu</a></li>
-      <li class=""><a href="info/view/2.html">Hướng dẫn</a></li>
-      <li class=""><a href="san-pham.html">Sản phẩm</a></li>
-      <li class=""><a href="lien-he.html">Liên hệ</a></li>
+      <li class=""><a href="<?php echo base_url('home/about') ?>">Giới thiệu</a></li>
+      <li class=""><a href="<?php echo base_url('home/guide') ?>">Hướng dẫn</a></li>
+      <li class=""><a href="<?php echo base_url('product/view_all_product/') ?>">Sản phẩm</a></li>
+
       <?php if(isset($user_info)): ?>
       <li class=""><a href="<?php echo base_url('user/index') ?>">Xin chào: <?php echo $user_info->HoKH.' '.$user_info->TenKH ?></a></li>
       <li class=""><a href="<?php echo base_url('user/logout') ?>">Đăng xuất</a></li>
