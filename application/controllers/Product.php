@@ -189,8 +189,8 @@ class Product extends MY_Controller
         //Tạo biến điều kiện lọc
         $input = array();
         $input['where'] = array(
-            'DonGia >=' => $price_from,
-            'DonGia <=' => $price_to
+            'DonGia * (1-GiamGia) >=' => $price_from,
+            'DonGia * (1-GiamGia) <=' => $price_to
         );
 
         //Lấy danh sách với đk lọc
@@ -229,7 +229,7 @@ class Product extends MY_Controller
         //Kiểm tra đã bình chọn hay chưa
         $raty = $this->session->userdata('session_raty');
         $raty = (!is_array($raty)) ? array() : $raty;
-        
+
         //Nếu đã tồn tại mã sp này trong session đánh giá
         if(isset($raty[$id]))
         {
@@ -257,6 +257,37 @@ class Product extends MY_Controller
         echo $output;
         exit();
 
+    }
+
+    function view_all_product()
+    {
+        $total_rows = $this->product_model->get_total();
+        $this->data['total_rows'] = $total_rows;
+        //Load thu vien phan trang
+        $this->load->library('pagination');
+        $config = array();
+        $config['total_rows'] = $total_rows;
+        $config['base_url'] = base_url('product/view_all_product/'); // link hien thi danh sach sp
+        $config['per_page'] = 8; // so luong hien thi tren 1 trang
+        $config['uri_segment'] = 3; // phan doan tren segment
+        $config['next_link'] = 'Trang kế';
+        $config['prev_link'] = 'Trang trước';
+
+        //cấu hình phân trang
+        $this->pagination->initialize($config);
+
+        //Lay thong tin segment o vtri 4
+        $segment = $this->uri->segment(3);
+        $segment = intval($segment);
+        //Lay 8 sp, bat dau tu vi tri thu $segment
+        $input['limit'] = array($config['per_page'], $segment);
+
+        $list = $this->product_model->get_list($input);
+        $this->data['list'] = $list;
+        //Laod giao diện
+        $this->data['title'] = 'Các sản phẩm';
+        $this->data['temp'] = 'site/product/view_all_product';
+        $this->load->view('site/layoutmaster', $this->data);
     }
 }
  ?>

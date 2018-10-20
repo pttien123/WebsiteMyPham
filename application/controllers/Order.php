@@ -13,6 +13,7 @@ class Order extends MY_Controller
         $this->load->library('form_validation');
         $this->load->helper('form');
 
+        //Nếu chưa đăng nhập
         if(!$this->session->userdata('user_id_logged'))
         {
             redirect(base_url('user/login'));
@@ -33,9 +34,10 @@ class Order extends MY_Controller
         $this->load->model('usertype_model');
         $type = $this->usertype_model->get_info($user->LoaiKH);
         $this->data['type'] = $type;
-        
+
         //Thông tin sp trong giỏ hàng
         $cart = $this->cart->contents();
+        $this->data['cart'] = $cart;
         //Tổng số sp trong giỏ hàng
         $total_items = $this->cart->total_items();
 
@@ -49,6 +51,7 @@ class Order extends MY_Controller
             $total_money = $total_money + $row['subtotal'];
         }
 
+        $total_money += 30000;
         $total_money = $total_money*(1-$type->GiamGia);
 
 
@@ -78,9 +81,12 @@ class Order extends MY_Controller
 
                 $data = array(
                   'MaKH'      => $user_id,
+                  'Email'     => $email,
                   'NgayDat'   => $today,
                   'NoiGiao'   =>  $address,
                   'Phone'     => $phone,
+                  'LoaiKH'    => $type->MaLoaiKH,
+                  'GiamGiaThanhVien' =>$type->GiamGia,
                   'TinhTrang' => 0, //0: chưa xử lý, 1: đang vận chuyển, 2: giao thành công, 3: thất bại
                   'TongTien'  => $total_money,
                   'GhiChu'    => $note
@@ -88,10 +94,13 @@ class Order extends MY_Controller
 
                 $this->load->model('order_model');
                 $this->load->model('orderdetail_model');
+
                 //Thêm đơn hàng
                 $this->order_model->insert($data);
+
                 //Lấy mã đơn hàng vừa thêm
                 $order_id = $this->db->insert_id();
+                $this->data['order_id'] = $order_id;
 
                 foreach ($cart as $row ) {
                     $data = array(
@@ -102,13 +111,38 @@ class Order extends MY_Controller
 
                       'GiamGia'   => $row['discount']
                     );
+
+                    //Tiến hành trừ sản phẩm
+                    $input = array();
+                    $input['where'] = array(
+                            'MaSP' => $row['id'],
+                            'SoLuongConLai >' => 0,
+
+                    );
+                    $input['order'] = array('HSD', 'ASC');
+                    $input['limit'] = array(1,0);
+                    $this->load->model('storage_model');
+                    //List sản phẩm ở trong bảng hàng tồn
+                    $pd = $this->storage_model->get_list($input);
+                    
+                    //Mã hàng tồn
+                    $id_storage = $pd[0]->MaHT;
+                    //Trừ SoLuongConLai trong bảng hàng tồn ở sản phầm tương ứng
+                    $storage_data = array(
+                      'SoLuongConLai ' =>$pd[0]->SoLuongConLai - $row['qty']
+                    );
+                    $this->storage_model->update($id_storage, $storage_data);
+
+                    //Tiến hành bỏ vào CTDH
                     $this->orderdetail_model->insert($data);
+
+
                 }
+
 
                 //Xóa toàn bộ sản phẩm
                 $this->cart->destroy();
                 $this->session->set_userdata('order_id',$order_id);
-                //Gửi mail
 
                 redirect(base_url('order/confirm'));
             }
@@ -123,10 +157,21 @@ class Order extends MY_Controller
     {
       $id = $this->session->userdata('order_id');
       $this->data['order_id'] = $id;
+
+      // //Gửi mail thông báo
+      // $message = $this->load->view('site/order/mail',$this->data,TRUE);
+      // prt($message);
+      // $this->load->library('email_library');
+      // if($this->email_library->send_mail($message,$email))
+      // {
+      //   redirect(base_url);
+      // }
+
       //Xác nhận đặt hàng
       $this->data['title'] = 'Xác nhận đặt hàng';
       $this->data['temp'] = 'site/order/confirm';
       $this->load->view('site/layoutmaster',$this->data);
     }
+
 }
  ?>

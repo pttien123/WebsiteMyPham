@@ -73,11 +73,7 @@
 										Hàng tồn
 									</a>
 						  </li>
-							<li >
-									<a href="admin/comment.html">
-										Phản hồi
-									</a>
-						  </li>
+						
 					</ul>
 
 </li>

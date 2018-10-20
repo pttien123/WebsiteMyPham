@@ -38,7 +38,7 @@
             <td><?php echo $row->SoLuong?></td>
             <td><?php echo number_format($row->DonGia)?>đ</td>
             <td><?php echo $row->GiamGia *100?>%</td>
-            <td><?php echo number_format($row->DonGia*(1- $row->GiamGia))?>đ</td>
+            <td><?php echo number_format($row->DonGia*(1- $row->GiamGia) * $row->SoLuong)?>đ</td>
             <td><?php echo $row->GhiChu ?></td>
 
           </tr>
@@ -51,10 +51,10 @@
           </tr>
           <tr>
             <td colspan="5">Giảm giá thành viên</td>
-            <td   ><?php echo $type->GiamGia *100?>%</td>
+            <td   ><?php echo $order->GiamGiaThanhVien *100?>%</td>
           </tr>
           <?php $sum = $sum + 30000; ?>
-          <?php $sum = $sum *(1-$type->GiamGia);?>
+          <?php $sum = $sum *(1-$order->GiamGiaThanhVien);?>
           <tr>
             <td colspan="5" style="color:red;"><b>Tổng tiền thanh toán: </b></td>
             <td style="color:red;"><?php echo number_format($sum) ?>đ</td>
